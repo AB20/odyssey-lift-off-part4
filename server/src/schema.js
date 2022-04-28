@@ -52,6 +52,11 @@ const typeDefs = gql`
     "The module's video url, for video-based modules"
     videoUrl: String
   }
+
+  type Mutation { 
+    "Increment the number of views of a track"
+    incrementTrackViews(id: ID!)
+  }
 `;
 
 module.exports = typeDefs;
