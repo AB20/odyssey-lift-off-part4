@@ -53,6 +53,11 @@ const typeDefs = gql`
     videoUrl: String
   }
 
+  type Mutation { 
+    "Increment the number of views of a track"
+    incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
+  }
+
   type IncrementTrackViewsResponse {
     "Similar to HTTP status code, represents the status of the mutation"
     code: Int!
@@ -62,11 +67,6 @@ const typeDefs = gql`
     message: String!
     "Newly updated track after a successful mutation"
     track: Track
-  }
-
-  type Mutation { 
-    "Increment the number of views of a track"
-    incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
   }
 `;
 
