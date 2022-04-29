@@ -17,7 +17,9 @@ const resolvers = {
   },
   Mutation: {
     // increments a track's numberOfViews property
-    incrementTrackViews: (parent, args, context, info) => {},
+    incrementTrackViews: (_, {id}, {dataSources}) => {
+      dataSources.trackAPI.incrementTrackViews(id);
+    },
   },
   Track: {
     author: ({ authorId }, _, { dataSources }) => {
