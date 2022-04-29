@@ -28,7 +28,10 @@ const resolvers = {
         };
       } catch (err) {
         return {
-          // we'll return a new object here
+          code: err.extensions.response.status,
+          success: false,
+          message: err.extensions.response.body,
+          track: null
         };
       };
     },
